@@ -16,8 +16,6 @@ class AuthController extends Controller
             return view('admin.auth.login');
         }
 
-        // return $request->all();
-
         $request->validate([
             'email' => 'required|email|exists:users,email',
             'password' => 'required|string|min:6',
