@@ -14,4 +14,9 @@ class Category extends Model
      * @var array
      */
     protected $guarded = ['id'];
+
+    public function parent()
+    {
+       return $this->belongsTo(Category::class, 'parent_id');
+    }
 }
