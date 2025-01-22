@@ -1,86 +1,109 @@
-<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg"
-                alt="logo" /></a>
+<nav class="navbar-classic navbar navbar-expand-lg">
+    <a id="nav-toggle" href="#"><i
+            data-feather="menu"
+            class="nav-icon me-2 icon-xs"></i></a>
+    <div class="ms-lg-3 d-none d-md-none d-lg-block">
+        <form class="d-flex align-items-center">
+            <input type="search" class="form-control" placeholder="Search" />
+        </form>
     </div>
-    <div class="navbar-menu-wrapper d-flex align-items-stretch">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="mdi mdi-menu"></span>
-        </button>
-        <ul class="navbar-nav navbar-nav-right">
-             <li class="nav-item dropdown">
-                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
-                    data-bs-toggle="dropdown">
-                    <i class="mdi mdi-bell-outline"></i>
-                    <span class="count-symbol bg-danger"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end navbar-dropdown preview-list"
-                    aria-labelledby="notificationDropdown">
-                    <h6 class="p-3 mb-0">Notifications</h6>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-success">
-                                <i class="mdi mdi-calendar"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                            <h6 class="preview-subject font-weight-normal mb-1">Event today</h6>
-                            <p class="text-gray ellipsis mb-0"> Just a reminder that you have an event today </p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-warning">
-                                <i class="mdi mdi-cog"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                            <h6 class="preview-subject font-weight-normal mb-1">Settings</h6>
-                            <p class="text-gray ellipsis mb-0"> Update dashboard </p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item preview-item">
-                        <div class="preview-thumbnail">
-                            <div class="preview-icon bg-info">
-                                <i class="mdi mdi-link-variant"></i>
-                            </div>
-                        </div>
-                        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
-                            <h6 class="preview-subject font-weight-normal mb-1">Launch Admin</h6>
-                            <p class="text-gray ellipsis mb-0"> New admin wow! </p>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <h6 class="p-3 mb-0 text-center">See all notifications</h6>
-                </div>
-            </li>
-            <li class="nav-item nav-profile dropdown">
-                <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <div class="nav-profile-img">
-                        <img src="assets/images/faces/face1.jpg" alt="image">
-                        <span class="availability-status online"></span>
+    <ul class="navbar-nav navbar-right-wrap ms-auto d-flex nav-top-wrap">
+        <li class="dropdown stopevent">
+            <a class="btn btn-light btn-icon rounded-circle indicator
+                indicator-primary text-muted" href="#" role="button"
+                id="dropdownNotification" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="icon-xs" data-feather="bell"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"
+                aria-labelledby="dropdownNotification">
+                <div>
+                    <div class="border-bottom px-3 pt-2 pb-3 d-flex
+                        justify-content-between align-items-center">
+                        <p class="mb-0 text-dark fw-medium fs-4">Notifications</p>
+                        <a href="#" class="text-muted">
+                            <span>
+                                <i class="me-1 icon-xxs" data-feather="settings"></i>
+                            </span>
+                        </a>
                     </div>
-                    <div class="nav-profile-text">
-                        <p class="mb-1 text-black">David Greymaax</p>
+                    <ul class="list-group list-group-flush notification-list-scroll">
+                        <li class="list-group-item bg-light">
+                            <a href="#" class="text-muted">
+                                <h5 class=" mb-1">Rishi Chopra</h5>
+                                <p class="mb-0">
+                                    Mauris blandit erat id nunc blandit, ac eleifend dolor pretium.
+                                </p>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-muted">
+                                <h5 class=" mb-1">Neha Kannned</h5>
+                                <p class="mb-0">
+                                    Proin at elit vel est condimentum elementum id in ante. Maecenas et sapien metus.
+                                </p>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-muted">
+                                <h5 class=" mb-1">Nirmala Chauhan</h5>
+                                <p class="mb-0">
+                                    Morbi maximus urna lobortis elit sollicitudin sollicitudieget elit vel pretium.
+                                </p>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-muted">
+                                <h5 class=" mb-1">Sina Ray</h5>
+                                <p class="mb-0">
+                                    Sed aliquam augue sit amet mauris volutpat hendrerit sed nunc eu diam.
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="border-top px-3 py-2 text-center">
+                        <a href="#" class="text-inherit fw-semi-bold">
+                            View all Notifications
+                        </a>
                     </div>
-                </a>
-                <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
                 </div>
-            </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
-            data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
-        </button>
-    </div>
+            </div>
+        </li>
+        <li class="dropdown ms-2">
+            <a class="rounded-circle" href="#" role="button" id="dropdownUser"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="avatar avatar-md avatar-indicators avatar-online">
+                    <img alt="avatar" src="{{asset('assets/admin/images/avatar.png')}}"
+                        class="rounded-circle" />
+                </div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownUser">
+                <div class="px-4 pb-0 pt-2">
+                    <div class="lh-1 ">
+                        <h5 class="mb-1">admin</h5>
+                        <a href="#" class="text-inherit fs-6">Profile</a>
+                    </div>
+                    <div class=" dropdown-divider mt-3 mb-2"></div>
+                </div>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="me-2 icon-xxs dropdown-item-icon"
+                                data-feather="settings"></i>Account Settings
+                        </a>
+                    </li>
+                    <li>
+                        <form action="#" method="POST">
+                            @CSRF
+                            <button class="dropdown-item" href="javascript:void(0)" onclick="this.form.submit();">
+                                <i class="me-2 icon-xxs dropdown-item-icon"
+                                    data-feather="power"></i>Sign Out
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
 </nav>

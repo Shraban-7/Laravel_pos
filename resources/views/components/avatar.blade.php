@@ -1,0 +1,1 @@
+<img {{ $attributes }} style="width: 48px; height:48px;" class="rounded-circle border">
