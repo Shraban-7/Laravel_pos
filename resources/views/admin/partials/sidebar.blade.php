@@ -4,7 +4,7 @@
 
 <nav class="navbar-vertical navbar">
     <div class="nav-scroller">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="{{ route('dashboard') }}">
             <img src="{{ asset('assets/images/logo.jpg') }}" alt="logo" />
             <span class="text-white fw-bold">{{ env('APP_NAME') }}</span>
         </a>

@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
-use App\Enums\UserType;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -23,32 +22,19 @@ class AuthController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
-        $allowedUserTypes = [
-            UserType::ADMIN,
-            UserType::MODERATOR,
-            UserType::SUPER_ADMIN,
-        ];
-
-        if (!$user || !in_array($user->user_type, $allowedUserTypes)) {
-            return redirect()->back()->with('error', 'Access denied for this account!');
+        if (!Hash::check($request->password, $user->password)) {
+            return redirect()->back()->with('error', 'Incorrect password!');
         }
 
-        if (!Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->back()->with('error', 'Invalid email or password!');
-        }
+        Auth::login($user);
 
-        session()->flash('success', 'Login successful');
+        return redirect()->route('dashboard')->with('success', 'Login successful');
+    }
 
-        switch ($user->user_type) {
-            case UserType::ADMIN:
-                return redirect()->route('admin.dashboard');
-            case UserType::MODERATOR:
-                return redirect()->route('moderator.dashboard');
-            case UserType::SUPER_ADMIN:
-                return redirect()->route('super_admin.dashboard');
-            default:
-                return redirect()->back()->with('error', 'Unauthorized access!');
-        }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 
 }

@@ -1,47 +1,39 @@
-@extends('admin.layouts.guest')
-
+@extends('admin.layouts.auth')
+@section('title', 'Login')
 @section('content')
-    <div class="container-scroller">
-        <div class="container-fluid page-body-wrapper full-page-wrapper">
-            <div class="content-wrapper d-flex align-items-center auth">
-                <div class="row flex-grow">
-                    <div class="col-lg-4 mx-auto">
-                        <div class="auth-form-light text-left p-5">
-                            <div class="brand-logo text-center mb-4">
-                                <img src="assets/images/logo.svg" alt="Logo">
-                            </div>
-                            <h4 class="text-center">Hello! Let's get started</h4>
-                            <h6 class="font-weight-light text-center">Sign in to continue.</h6>
-                            <form class="pt-3" action="{{ route('login') }}" method="POST">
-                                @csrf
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1"
-                                        placeholder="Enter Email" name="email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1"
-                                        placeholder="Password" name="password">
-                                </div>
-                                <div class="mt-3 d-grid gap-2">
-                                    <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn"
-                                        >SIGN IN</button>
-                                </div>
-                                <div class="my-2 d-flex justify-content-between align-items-center">
-                                    <div class="form-check">
-                                        <label class="form-check-label text-muted">
-                                            <input type="checkbox" class="form-check-input"> Keep me signed in
-                                        </label>
-                                    </div>
-                                    <a href="#" class="auth-link text-primary">Forgot password?</a>
-                                </div>
-                                <div class="text-center mt-4 font-weight-light"> Don't have an account? <a
-                                        href="register.html" class="text-primary">Create</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+<div class="card smooth-shadow-md">
+    <div class="card-body p-6">
+        <div class="mb-4 text-center">
+            <img src="{{ asset('assets/images/logo-white.png') }}" alt="" height="120">
+            <h3 class="text-theme fw-bold">{{ env('APP_NAME') }}</h3>
+        </div>
+        @if (session('error'))
+        <div class="alert alert-info">
+            {{ session('error') }}
+        </div>
+        @endif
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <div class="mb-3">
+                <label for="email" class="form-label">Username or email</label>
+                <input type="email" id="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email address here" required="">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" name="password" placeholder="**************" required="">
+            </div>
+            <div class="d-lg-flex justify-content-between align-items-center mb-4">
+                <div class="form-check custom-checkbox">
+                    <input type="checkbox" class="form-check-input" id="rememberme">
+                    <label class="form-check-label" for="rememberme">Remember me</label>
                 </div>
             </div>
-        </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-theme">Sign in</button>
+            </div>
+            <x-flash-message />
+        </form>
     </div>
+</div>
 @endsection
