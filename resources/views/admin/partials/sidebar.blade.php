@@ -21,16 +21,17 @@
                     <i
                         data-feather="layers"
                         class="nav-icon icon-xs me-2">
-                    </i> Manage Sports
+                    </i> Manage Categories
                 </a>
                 <?php
                     $activeMenus = ['admin/categories', 'admin/leagues', 'admin/teams'];
                 ?>
                 <div id="navSports" class="collapse" data-bs-parent="#sideNavbar">
                     <ul class="nav flex-column">
-                        {{-- <x-admin.nav-item-link :route="'#'">
+                        <x-admin.nav-item-link :route="'admin.categories.index'">
                             Categories
                         </x-admin.nav-item-link>
+                        {{--
                         <x-admin.nav-item-link :route="'#'">
                             Leagues
                         </x-admin.nav-item-link>

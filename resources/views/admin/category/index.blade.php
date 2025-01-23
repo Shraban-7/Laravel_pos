@@ -9,13 +9,12 @@
                 class="icon-xs"></i> Add Category</button>
     </div>
     <div class="table-responsive">
-        <table class="table table-striped table-bordered bg-white mb-3 text-nowrap">
+        <table class="table table-bordered bg-white mb-3 text-nowrap">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Parent</th>
-                    <th>Name</th>
-                    <th>Slug</th>
+                    <th>Category</th>
+                    <th>Sub-Category</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -23,9 +22,18 @@
                 @forelse ($categories as $key => $category)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td>{{ $category->parent?->name }}</td>
                         <td>{{ $category->name }}</td>
-                        <td>{{ $category->slug }}</td>
+                        <td>
+                            @if ($category->subcategories->isNotEmpty())
+                                <ul>
+                                    @foreach ($category->subcategories as $subcategory)
+                                        <li>{{ $subcategory->name }}</li>
+                                    @endforeach
+                                </ul>
+                            @else
+                                <span class="text-muted"></span>
+                            @endif
+                        </td>
                         <td>
                             <button class="btn btn-sm btn-light border btn-sm me-1" data-bs-toggle="modal"
                                 data-bs-target="#editCategoryModal{{ $category->id }}">
