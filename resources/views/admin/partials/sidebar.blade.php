@@ -31,11 +31,10 @@
                         <x-admin.nav-item-link :route="'admin.categories.index'">
                             Categories
                         </x-admin.nav-item-link>
-                        {{--
-                        <x-admin.nav-item-link :route="'#'">
-                            Leagues
+                        <x-admin.nav-item-link :route="'admin.suppliers.index'">
+                            Suppliers
                         </x-admin.nav-item-link>
-
+                        {{--
                         <x-admin.nav-item-link :route="'#'">
                             Teams
                         </x-admin.nav-item-link> --}}
